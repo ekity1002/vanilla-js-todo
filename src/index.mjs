@@ -1,12 +1,13 @@
 // import "./styles.css";
 
 function onClickComplete() {
-  console.log("@@@@@@");
   alert("complete");
 }
 
-function onClickDelete() {
-  alert("delete");
+function onClickDelete(buttonDelete) {
+  // このボタンの親要素の li を未完了TODOから消す
+  const deleteTarget = buttonDelete.parentNode.parentNode;
+  document.getElementById("incomplete-list").removeChild(deleteTarget);
 }
 
 function createInCompleteTodo(inputText) {
@@ -19,7 +20,7 @@ function createInCompleteTodo(inputText) {
   buttonComplete.addEventListener("click", () => onClickComplete());
   const buttonDelete = document.createElement("button");
   buttonDelete.innerText = "削除";
-  buttonDelete.addEventListener("click", () => onClickDelete());
+  buttonDelete.addEventListener("click", () => onClickDelete(buttonDelete));
 
   const div = document.createElement("div");
   div.className = "list-row";
