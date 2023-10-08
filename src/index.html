@@ -1,13 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="jp">
   <head>
-    <title>Parcel Sandbox</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TODO-vanilla-js</title>
   </head>
-
   <body>
-    <div id="app"></div>
-
-    <script src="./index.mjs" type="module"></script>
+    <div class="add-todo">
+      <input type="text" placeholder="TODOを入力" />
+      <button>追加</button>
+    </div>
+    <div class="undone-todo">
+      <p>未完了のTODO</p>
+      <ul>
+        <li>
+          TODOです
+        </li>
+        <button>完了</button>
+        <button>削除</button>
+      </ul>
+    </div>
+    <div class="complete-todo">
+      <p>完了したTODO</p>
+      <ul>
+        <li>
+          TODOでした
+        </li>
+        <button>戻す</button>
+      </ul>
+    </div>
   </body>
 </html>
