@@ -1,2 +1,2 @@
 # vanilla-js-todo
-Created with CodeSandbox
+vanilla JavaScript での簡易TODOアプリ
