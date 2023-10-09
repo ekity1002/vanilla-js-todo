@@ -6,9 +6,10 @@ function deleteTODOListContent(button, patentUlId) {
   document.getElementById(patentUlId).removeChild(deleteTarget);
 }
 
-function onClickRevert(buttonRevert) {
+function onClickRevert(buttonRevert, inputText) {
   // 戻るボタンが押された
-  alert("戻る");
+  createInCompleteTodo(inputText);
+  deleteTODOListContent(buttonRevert, "complete-list");
 }
 
 function onClickComplete(buttonComplete, inputText) {
@@ -18,7 +19,9 @@ function onClickComplete(buttonComplete, inputText) {
 
   const buttonRevert = document.createElement("button");
   buttonRevert.innerText = "戻す";
-  buttonRevert.addEventListener("click", () => onClickRevert(buttonRevert));
+  buttonRevert.addEventListener("click", () =>
+    onClickRevert(buttonRevert, inputText),
+  );
 
   const div = document.createElement("div");
   div.className = "list-row";
@@ -27,7 +30,7 @@ function onClickComplete(buttonComplete, inputText) {
   const li = document.createElement("li");
   li.appendChild(div);
 
-  const ul = document.getElementById("complate-list");
+  const ul = document.getElementById("complete-list");
   ul.appendChild(li);
   // この要素を消す
   deleteTODOListContent(buttonComplete, "incomplete-list");
